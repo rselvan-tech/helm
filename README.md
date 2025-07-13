@@ -1,2 +1,2 @@
 # helm
-Repository for Helm Files
+Repository to hold helm files 

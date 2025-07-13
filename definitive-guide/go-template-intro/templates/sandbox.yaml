@@ -1,0 +1,18 @@
+# This is YAML comment
+{{- /* I am GO comment */}}
+test: {{ lower (replace "" "-" .Values.test) }} 
+labels:
+  {{- /* The app label comes from the Release*/}}
+  app: {{ .Release.Name }}
+  {{- /* The chart label comes from the chart information*/}}
+  chart: {{ upper .Chart.Name | replace "-" "#" }}
+  {{- /* GO if-else */}}
+  {{- if eq .Values.environment "production" }}
+  environment: production
+  build: stable
+  public-ingress: true
+  {{- else}}
+  environment: dev
+  build: alpha
+  public-ingress: false
+  {{- end}}
