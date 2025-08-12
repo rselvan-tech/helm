@@ -1,0 +1,3 @@
+{{- /* list: {{ list 1 2 3 | toYaml */}}
+list:{{ list 1 2 3 | toYaml | nindent 2}}
+my-dict: {{dict "key1" "myVal-1" "complex" (dict "key2" "myVal-2")| toYaml | nindent 2}}

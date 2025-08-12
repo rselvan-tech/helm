@@ -1,2 +1,0 @@
-{{- /* list: {{ list 1 2 3 | toYaml */}}
-list:{{ list 1 2 3 | toYaml | nindent 2}}
