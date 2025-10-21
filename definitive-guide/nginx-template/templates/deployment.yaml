@@ -7,10 +7,12 @@ metadata:
 spec:
   replicas: {{ if eq .Values.environment "prod"}}3{{else}}1{{end}}
   selector:
-    matchLabels: {{ include "labels" . | nindent 6}}
+    matchLabels: 
+      {{ include "labels" . | nindent 6}}
   template:
     metadata:
-      labels: {{ include "labels" .| nindent 8}}
+      labels: 
+        {{ include "labels" .| nindent 8}}
     spec:
       containers:
         - name: nginx
